@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>COV Registration - Work Experience</title>
+    <meta name="description" content="Council of Valuers registration - work experience step.">
+    <link rel="canonical" href="https://councilofvaluers.com/reg3.html">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Registration - Work Experience | Council of Valuers">
+    <meta property="og:description" content="Council of Valuers registration - work experience step.">
+    <meta property="og:url" content="https://councilofvaluers.com/reg3.html">
+    <meta property="og:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Registration - Work Experience | Council of Valuers">
+    <meta name="twitter:description" content="Council of Valuers registration - work experience step.">
+    <meta name="twitter:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://councilofvaluers.com/reg3.html",
+          "url": "https://councilofvaluers.com/reg3.html",
+          "name": "Registration - Work Experience | Council of Valuers"
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+</head>
+
+<body class="reg-page reg3-only">
+    <%- include("../components/header") %>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="container1">
+        <h1 class="page-title1">Registration Form</h1>
+        <div class="tabs1">
+            <a class="tab1" href="/personal">Personal Details</a>
+            <a class="tab1" href="/education">Educational Details</a>
+            <a href="/work" class="tab1 active">Work Experience</a>
+        </div>
+        <div class="content1">
+            <div class="experience-section1">
+                <h3 class="section-title1">Work Experience</h3>
+                <table class="experience-table1">
+                    <thead>
+                        <tr>
+                            <th>You are presently</th>
+                            <th>Total no. of years in practice/emp</th>
+                            <th>Period From</th>
+                            <th>Period To</th>
+                            <th>Employer</th>
+                            <th>Designation</th>
+                            <th>Area of Work</th>
+                            <th>Upload</th>
+                        </tr>
+                    </thead>
+                    <tbody id="experienceTableBody1">
+                        <tr>
+                            <td><select>
+                                    <option value="">Select</option>
+                                    <option value="employment">Employment</option>
+                                    <option value="practice">Practice</option>
+                                </select></td>
+                            <td><input type="text" placeholder="Year"></td>
+                            <td><input type="text" placeholder="From"></td>
+                            <td><input type="text" placeholder="To"></td>
+                            <td><input type="text" placeholder="Employer"></td>
+                            <td><input type="text" placeholder="Designation"></td>
+                            <td><input type="text" placeholder="Area"></td>
+                            <td><button class="upload-btn1"
+                                    onclick="document.getElementById('expUpload1').click()">Upload</button><input
+                                    type="file" id="expUpload1" accept=".pdf,.jpg,.png"></td>
+                        </tr>
+                        <tr>
+                            <td><select>
+                                    <option value="">Select</option>
+                                    <option value="employment">Employment</option>
+                                    <option value="practice">Practice</option>
+                                </select></td>
+                            <td><input type="text" placeholder="Year"></td>
+                            <td><input type="text" placeholder="From"></td>
+                            <td><input type="text" placeholder="To"></td>
+                            <td><input type="text" placeholder="Employer"></td>
+                            <td><input type="text" placeholder="Designation"></td>
+                            <td><input type="text" placeholder="Area"></td>
+                            <td><button class="upload-btn1"
+                                    onclick="document.getElementById('expUpload2').click()">Upload</button><input
+                                    type="file" id="expUpload2" accept=".pdf,.jpg,.png"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="add-row-btn1" onclick="addExperienceRow()">+ Add Row</button>
+            </div>
+            <div class="terms-section1">
+                <h3 class="section-title1">Terms</h3>
+                <ul class="terms-list1">
+                    <li><span>Have you every been Convicted for an offence?</span>
+                        <div class="radio-group1">
+                            <div class="radio-option1"><input type="radio" id="q1-yes" name="question1"
+                                    value="yes"><label for="q1-yes">Yes</label></div>
+                            <div class="radio-option1"><input type="radio" id="q1-no" name="question1" value="no"
+                                    checked><label for="q1-no">No</label></div>
+                        </div>
+                    </li>
+                    <li><span>Whether any criminal proceeding is initiated against you and is pending for disposal
+                            before the court of law? (excluding litigation of personal/ matrimonial nature)</span>
+                        <div class="radio-group1">
+                            <div class="radio-option1"><input type="radio" id="q2-yes" name="question2"
+                                    value="yes"><label for="q2-yes">Yes</label></div>
+                            <div class="radio-option1"><input type="radio" id="q2-no" name="question2" value="no"
+                                    checked><label for="q2-no">No</label></div>
+                        </div>
+                    </li>
+                    <li><span>Have you ever been declared as an undischarged bankrupt or applied to be adjudged as
+                            Bankrupt?</span>
+                        <div class="radio-group1">
+                            <div class="radio-option1"><input type="radio" id="q3-yes" name="question3"
+                                    value="yes"><label for="q3-yes">Yes</label></div>
+                            <div class="radio-option1"><input type="radio" id="q3-no" name="question3" value="no"
+                                    checked><label for="q3-no">No</label></div>
+                        </div>
+                    </li>
+                    
+                    <li><span>Have you ever been restrained by any public sector bank / any other institution to conduct
+                            valuation services and subsequently de-panelled from their panel</span>
+                        <div class="radio-group1">
+                            <div class="radio-option1"><input type="radio" id="q4-yes" name="question4"
+                                    value="yes"><label for="q4-yes">Yes</label></div>
+                            <div class="radio-option1"><input type="radio" id="q4-no" name="question4" value="no"
+                                    checked><label for="q4-no">No</label></div>
+                        </div>
+                    </li>
+                    <li><span>Whether any disciplinary proceeding are pending or any disciplinary action has been taken
+                            at any time in the preceding three years against you by the institution / body of which you
+                            are a member</span>
+                        <div class="radio-group1">
+                            <div class="radio-option1"><input type="radio" id="q5-yes" name="question5"
+                                    value="yes"><label for="q5-yes">Yes</label></div>
+                            <div class="radio-option1"><input type="radio" id="q5-no" name="question5" value="no"
+                                    checked><label for="q5-no">No</label></div>
+                        </div>
+                    </li>
+                    <li><span>Whether you had an unblemished service with the last employer in case of
+                            employment?</span>
+                        <div class="radio-group1">
+                            <div class="radio-option1"><input type="radio" id="q6-yes" name="question6" value="yes"
+                                    checked><label for="q6-yes">Yes</label></div>
+                            <div class="radio-option1"><input type="radio" id="q6-no" name="question6" value="no"><label
+                                    for="q6-no">No</label></div>
+                        </div>
+                    </li>
+                    <li><span>Whether your name appears in the database of MCA regarding:</span>
+                        <div class="radio-group1">
+                            <div class="radio-option1"><input type="radio" id="q7-yes" name="question7"
+                                    value="yes"><label for="q7-yes">Yes</label></div>
+                            <div class="radio-option1"><input type="radio" id="q7-no" name="question7" value="no"
+                                    checked><label for="q7-no">No</label></div>
+                        </div>
+                    </li>
+                    <li class="no-counter">
+                        <ul class="sub-list">
+                            <li><span>Directors disqualified under section 164 of companies act 2013</span>
+                                <div class="radio-group1">
+                                    <div class="radio-option1"><input type="radio" id="q8a-yes" name="question8a"
+                                            value="yes"><label for="q8a-yes">Yes</label></div>
+                                    <div class="radio-option1"><input type="radio" id="q8a-no" name="question8a"
+                                            value="no" checked><label for="q8a-no">No</label></div>
+                                </div>
+                            </li>
+                            <li><span>Proclaimed Offenders under section 82 of the code of Criminal Procedure,
+                                    1973?</span>
+                                <div class="radio-group1">
+                                    <div class="radio-option1"><input type="radio" id="q8b-yes" name="question8b"
+                                            value="yes"><label for="q8b-yes">Yes</label></div>
+                                    <div class="radio-option1"><input type="radio" id="q8b-no" name="question8b"
+                                            value="no" checked><label for="q8b-no">No</label></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span>Whether you have been penalised by a market regulator (SEBI or CCI) in the last 3
+                            years?</span>
+                        <div class="radio-group1">
+                            <div class="radio-option1"><input type="radio" id="q9-yes" name="question9"
+                                    value="yes"><label for="q9-yes">Yes</label></div>
+                            <div class="radio-option1"><input type="radio" id="q9-no" name="question9" value="no"
+                                    checked><label for="q9-no">No</label></div>
+                        </div>
+                    </li>
+                    <li><span>Whether your name appears in the list of defaulters of RBI?</span>
+                        <div class="radio-group1">
+                            <div class="radio-option1"><input type="radio" id="q10-yes" name="question10"
+                                    value="yes"><label for="q10-yes">Yes</label></div>
+                            <div class="radio-option1"><input type="radio" id="q10-no" name="question10" value="no"
+                                    checked><label for="q10-no">No</label></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="action-buttons1">
+                <button class="back-btn1" onclick="window.location.href='/education'">Back</button>
+                <button class="next-btn1" onclick="alert('Form Submitted!')">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+        <!-- FOOTER -->
+        <%- include("../components/footer") %>
+    
+    <script>
+        let expRowCount = 2; function addExperienceRow() { expRowCount++; const t = document.getElementById("experienceTableBody1"), e = document.createElement("tr"); e.innerHTML = `<td><select><option value="">Select</option><option value="employment">Employment</option><option value="practice">Practice</option></select></td><td><input type="text" placeholder="Year"></td><td><input type="text" placeholder="From"></td><td><input type="text" placeholder="To"></td><td><input type="text" placeholder="Employer"></td><td><input type="text" placeholder="Designation"></td><td><input type="text" placeholder="Area"></td><td><button class="upload-btn1" onclick="document.getElementById('expUpload${expRowCount}').click()">Upload</button><input type="file" id="expUpload${expRowCount}" accept=".pdf,.jpg,.png"></td>`, t.appendChild(e) } 
+        const hamburger = document.getElementById("hamburger"), navMenu = document.getElementById("navMenu"), menuOverlay = document.getElementById("menuOverlay"); hamburger.addEventListener("click", function () { this.classList.toggle("active"), navMenu.classList.toggle("active"), menuOverlay.classList.toggle("active"), document.body.style.overflow = this.classList.contains("active") ? "hidden" : "" }), menuOverlay.addEventListener("click", function () { hamburger.classList.remove("active"), navMenu.classList.remove("active"), this.classList.remove("active"), document.body.style.overflow = "" }), navMenu.querySelectorAll("a").forEach(t => { t.addEventListener("click", function (t) { window.innerWidth <= 768 && this.parentElement.classList.contains("nav-item") || (hamburger.classList.remove("active"), navMenu.classList.remove("active"), menuOverlay.classList.remove("active"), document.body.style.overflow = "") }) }); if (window.innerWidth <= 768) { const t = document.querySelector(".nav-item"); if (t) { t.querySelector("a").addEventListener("click", function (e) { e.preventDefault(), t.classList.toggle("mobile-active") }) } } const navRight = document.querySelector(".nav-right"); if (navRight && window.innerWidth <= 768) { const t = navRight.querySelector(".register-btn").cloneNode(!0), e = navRight.querySelector(".login-btn").cloneNode(!0); navMenu.appendChild(t), navMenu.appendChild(e) }
+    </script>
+    <script src="/js/script.js"></script>
+    <script src="/js/reg.js"></script>
+
+</body>
+
+</html>
+
+
+

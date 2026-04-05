@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Training & Courses - Council of Valuers</title>
+    <meta name="description" content="Upcoming valuation courses and certifications from the Council of Valuers. Join the waitlist for training updates.">
+    <link rel="canonical" href="https://councilofvaluers.com/training.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Training & Courses - Council of Valuers">
+    <meta property="og:description" content="Upcoming valuation courses and certifications from the Council of Valuers. Join the waitlist for training updates.">
+    <meta property="og:url" content="https://councilofvaluers.com/training.html">
+    <meta property="og:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Training & Courses - Council of Valuers">
+    <meta name="twitter:description" content="Upcoming valuation courses and certifications from the Council of Valuers. Join the waitlist for training updates.">
+    <meta name="twitter:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://councilofvaluers.com/training.html",
+          "url": "https://councilofvaluers.com/training.html",
+          "name": "Training & Courses - Council of Valuers"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem","position": 1,"name": "Home","item": "https://councilofvaluers.com/"},
+            {"@type": "ListItem","position": 2,"name": "Training & Courses","item": "https://councilofvaluers.com/training.html"}
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <%- include("../components/header") %>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Training & Courses</h1>
+    </section>
+
+    <!-- Main Content -->
+    <div class="terms-container">
+        <p>Coming Soon...</p>
+    </div>
+<div id="footer-placeholder"></div>
+
+    <script>
+	const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+const menuOverlay = document.getElementById('menuOverlay');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+});
+
+menuOverlay.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+        if (window.innerWidth <= 768 && this.parentElement.classList.contains('nav-item')) return;
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
+if (window.innerWidth <= 768) {
+    const navItem = document.querySelector('.nav-item');
+    if (navItem) {
+        navItem.querySelector('a').addEventListener('click', e => {
+            e.preventDefault();
+            navItem.classList.toggle('mobile-active');
+        });
+    }
+}
+// Clone right buttons into mobile menu
+        const navRight = document.querySelector('.nav-right');
+        if (navRight && window.innerWidth <= 768) {
+            const registerBtn = navRight.querySelector('.register-btn-header');
+            const loginBtn = navRight.querySelector('.login-btn');
+            if (registerBtn && loginBtn) {
+                const registerClone = registerBtn.cloneNode(true);
+                const loginClone = loginBtn.cloneNode(true);
+                navMenu.appendChild(registerClone);
+                navMenu.appendChild(loginClone);
+            }
+        }
+
+</script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
+
+
+

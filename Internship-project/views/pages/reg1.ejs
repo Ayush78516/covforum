@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>COV Registration</title>
+    <meta name="description" content="Council of Valuers registration - personal details step.">
+    <link rel="canonical" href="https://councilofvaluers.com/reg1.html">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Registration - Personal Details | Council of Valuers">
+    <meta property="og:description" content="Council of Valuers registration - personal details step.">
+    <meta property="og:url" content="https://councilofvaluers.com/reg1.html">
+    <meta property="og:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Registration - Personal Details | Council of Valuers">
+    <meta name="twitter:description" content="Council of Valuers registration - personal details step.">
+    <meta name="twitter:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://councilofvaluers.com/reg1.html",
+          "url": "https://councilofvaluers.com/reg1.html",
+          "name": "Registration - Personal Details | Council of Valuers"
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    
+</head>
+
+<body class="reg-page reg1-only">
+    <%- include("../components/header") %>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+
+    <div class="container1">
+        <h1 class="page-title1">Registration Form</h1>
+        <div class="tabs1">
+            <a class="tab1 active" href="/personal">Personal Details</a>
+            <a class="tab1" href="/education">Educational Details</a>
+            <a href='/work' class="tab1">Work Experience</a>
+        </div>
+        <div class="content1">
+            <div class="form-grid1">
+                <div class="form-section1">
+                    <h3 class="section-title1">Personal Details</h3>
+                    <div class="form-row1">
+                        <div class="form-group1"><label>First Name</label><input type="text" placeholder="First Name">
+                        </div>
+                        <div class="form-group1"><label>Last Name</label><input type="text" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-row1">
+                        <div class="form-group1"><label>Email ID</label><input type="email" placeholder="Email ID"></div>
+                        <div class="form-group1"><label>Mobile Number</label><input type="text"
+                                placeholder="Mobile Number"></div>
+                    </div>
+                    <div class="form-row1">
+                        <div class="form-group1"><label>Fathers /Husband Name</label><input type="text"
+                                placeholder="Fathers /Husband Name"></div>
+                        <div class="form-group1"><label>DOB</label><input type="text" placeholder="DOB"></div>
+                    </div>
+                    <div class="form-group1"><label>Gender</label><select>
+                            <option>Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select></div>
+                </div>
+                <div class="upload-section1">
+                    <h3 class="section-title1">Upload Documents</h3>
+                    <div class="upload-grid1">
+                        <div class="upload-box1">
+                            <div class="preview-area1" id="picturePreview1"><span style="color:#999">Picture</span></div>
+                            <button class="upload-btn1" onclick="document.getElementById('pictureInput1').click()">Upload
+                                your Picture</button>
+                            <input type="file" id="pictureInput1" accept="image/*"
+                                onchange="previewImage(this,'picturePreview1')">
+                        </div>
+                        <div class="upload-box1">
+                            <div class="preview-area1" id="signaturePreview1"><span style="color:#999">Signature</span>
+                            </div>
+                            <button class="upload-btn1"
+                                onclick="document.getElementById('signatureInput1').click()">Upload your
+                                Signatures</button>
+                            <input type="file" id="signatureInput1" accept="image/*"
+                                onchange="previewImage(this,'signaturePreview1')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-grid1">
+                <div class="form-section1">
+                    <h3 class="section-title1">Permanent Address</h3>
+                    <div class="form-group1 full-width"><label>Address</label><input type="text" placeholder="Address">
+                    </div>
+                    <div class="form-group1 full-width"><label>Address</label><input type="text" placeholder="Address">
+                    </div>
+                    <div class="form-row1">
+                        <div class="form-group1"><label>City</label><select>
+                                <option>Select City</option>
+                            </select></div>
+                        <div class="form-group1"><label>State</label><select>
+                                <option>Select State</option>
+                            </select></div>
+                    </div>
+                    <div class="form-row1">
+                        <div class="form-group1"><label>District</label><select>
+                                <option>Select District</option>
+                            </select></div>
+                        <div class="form-group1"><label>Pincode</label><input type="text" placeholder="Pincode"></div>
+                    </div>
+                </div>
+                <div class="form-section1">
+                    <h3 class="section-title1">Correspondence Address</h3>
+                    <div class="form-group1 full-width"><label>Address</label><input type="text" placeholder="Address">
+                    </div>
+                    <div class="form-group1 full-width"><label>Address</label><input type="text" placeholder="Address">
+                    </div>
+                    <div class="form-row1">
+                        <div class="form-group1"><label>City</label><select>
+                                <option>Select City</option>
+                            </select></div>
+                        <div class="form-group1"><label>State</label><select>
+                                <option>Select State</option>
+                            </select></div>
+                    </div>
+                    <div class="form-row1">
+                        <div class="form-group1"><label>District</label><select>
+                                <option>Select District</option>
+                            </select></div>
+                        <div class="form-group1"><label>Pincode</label><input type="text" placeholder="Pincode"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="upload-section1">
+                <h3 class="section-title1">Document Uploads</h3>
+                <div class="document-uploads1">
+                    <div class="doc-upload-item1"><input type="text" placeholder="PAN Number" readonly><button
+                            class="doc-upload-btn1" onclick="document.getElementById('panInput1').click()">Upload
+                            Pan</button><input type="file" id="panInput1" accept=".pdf,.jpg,.png"></div>
+                    <div class="doc-upload-item1"><input type="text" placeholder="Aadhar Number" readonly><button
+                            class="doc-upload-btn1" onclick="document.getElementById('aadharInput1').click()">Upload
+                            Aadhar</button><input type="file" id="aadharInput1" accept=".pdf,.jpg,.png"></div>
+                    <div class="doc-upload-item1"><input type="text" placeholder="GST Number" readonly><button
+                            class="doc-upload-btn1" onclick="document.getElementById('gstInput1').click()">Upload
+                            GST</button><input type="file" id="gstInput1" accept=".pdf,.jpg,.png"></div>
+                    <div class="doc-upload-item1"><input type="text" placeholder="Passport Number1" readonly><button
+                            class="doc-upload-btn1" onclick="document.getElementById('passportInput1').click()">Upload
+                            Passport</button><input type="file" id="passportInput1" accept=".
+                            pdf,.jpg,.png">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="action-buttons1">
+                <button class="back-btn1" onclick="window.location.href='/'">Back</button>
+                <button class="next-btn1" onclick="window.location.href='/education'">Next</button>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- CONTACT SECTION -->
+    <%- include("../components/footer") %>
+
+    <script>
+	const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+const menuOverlay = document.getElementById('menuOverlay');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+});
+
+menuOverlay.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+        if (window.innerWidth <= 768 && this.parentElement.classList.contains('nav-item')) return;
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
+if (window.innerWidth <= 768) {
+    const navItem = document.querySelector('.nav-item');
+    if (navItem) {
+        navItem.querySelector('a').addEventListener('click', e => {
+            e.preventDefault();
+            navItem.classList.toggle('mobile-active');
+        });
+    }
+}
+// Clone right buttons into mobile menu
+        const navRight = document.querySelector('.nav-right');
+        if (navRight && window.innerWidth <= 768) {
+            const registerBtn = navRight.querySelector('.register-btn-header');
+            const loginBtn = navRight.querySelector('.login-btn');
+            if (registerBtn && loginBtn) {
+                const registerClone = registerBtn.cloneNode(true);
+                const loginClone = loginBtn.cloneNode(true);
+                navMenu.appendChild(registerClone);
+                navMenu.appendChild(loginClone);
+            }
+        }
+
+</script>
+    <script src="/js/script.js"></script>
+</body>
+
+
+

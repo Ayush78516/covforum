@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Contact Us - Confederation of Valuers</title>
+    <meta name="description" content="Reach the Council of Valuers for membership, training, or partnership inquiries. Phone: +91 98888 58111.">
+    <link rel="canonical" href="https://councilofvaluers.com/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Council of Valuers">
+    <meta property="og:description" content="Reach the Council of Valuers for membership, training, or partnership inquiries. Phone: +91 98888 58111.">
+    <meta property="og:url" content="https://councilofvaluers.com/contact.html">
+    <meta property="og:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Council of Valuers">
+    <meta name="twitter:description" content="Reach the Council of Valuers for membership, training, or partnership inquiries. Phone: +91 98888 58111.">
+    <meta name="twitter:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "@id": "https://councilofvaluers.com/contact.html",
+          "url": "https://councilofvaluers.com/contact.html",
+          "name": "Contact Council of Valuers"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://councilofvaluers.com/#organization",
+          "name": "Council of Valuers",
+          "url": "https://councilofvaluers.com/",
+          "logo": "https://councilofvaluers.com/assets/Logo.png",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+91 98888 58111",
+              "contactType": "customer service",
+              "email": "info@mysite.com"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem","position": 1,"name": "Home","item": "https://councilofvaluers.com/"},
+            {"@type": "ListItem","position": 2,"name": "Contact","item": "https://councilofvaluers.com/contact.html"}
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+</head>
+
+<body>
+    <!-- ==================== HEADER - BOD STYLE ==================== -->
+    <%- include("../components/header") %>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you. Reach out to us anytime!</p>
+        
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Contact Grid -->
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2>Send Us a Message</h2>
+                <form method="post" action="/api/contact">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Full Name *" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email Address *" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Phone Number" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Subject *" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Message *" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            <!-- Contact Info -->
+            <div class="contact-info-section">
+                <h2>Contact Information</h2>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Address</h3>
+                        <p>26/A, First Cross, First Main Canara Bank Colony,<br>
+                            Subramanyapura, Bengaluru-560061, Karnataka</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p>
+                            <a href="tel:+919888858111">+91 98888 58111</a><br>
+                            <!-- <a href="tel:+919888856111">+91 98888 56111</a> -->
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@mysite.com">info@mysite.com</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Working Hours</h3>
+                        <p>Mon - Sat: 9:00 AM - 5:00 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section">
+            <h2>Find Us on Map</h2>
+            <div class="map-container">
+                <p><i class="fas fa-map-marked-alt" style="font-size: 2em;"></i><br>Map</p>
+            </div>
+        </div>
+        <div class="bank-details-section">
+            <h2>Bank Details</h2>
+            <div class="bank-card">
+                <div class="bank-header">
+                    <i class="fas fa-university"></i>
+                    <h3>COV India Forum</h3>
+                </div>
+                <div class="bank-info-grid">
+                    <div class="bank-info-item">
+                        <div class="bank-label">Bank Name</div>
+                        <div class="bank-value">Yes Bank Ltd</div>
+                    </div>
+                    <div class="bank-info-item">
+                        <div class="bank-label">Account Number</div>
+                        <div class="bank-value">020588700000262</div>
+                    </div>
+                    <div class="bank-info-item">
+                        <div class="bank-label">IFSC Code</div>
+                        <div class="bank-value">YESB0000205</div>
+                    </div>
+                    <div class="bank-info-item">
+                        <div class="bank-label">Branch</div>
+                        <div class="bank-value">Karol Bagh, New Delhi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <%- include("../components/footer") %>
+
+    <script src="/js/script.js"></script>
+    <script>
+
+        // ==================== HERO SECTION FADE IN ====================
+        window.addEventListener('load', () => {
+            // Hero animation removed (handled by CSS now)
+
+
+            // ==================== FADE-IN ANIMATIONS ====================
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px'
+            };
+
+            // Get both sections
+            const contactGrid = document.querySelector('.contact-grid');
+            const contactFormSection = document.querySelector('.contact-form-section');
+            const contactInfoSection = document.querySelector('.contact-info-section');
+
+            const formTitle = contactFormSection ? contactFormSection.querySelector('h2') : null;
+            const formGroups = document.querySelectorAll('.contact-form-section .form-group');
+            const submitBtn = document.querySelector('.submit-btn');
+
+            const infoTitle = contactInfoSection ? contactInfoSection.querySelector('h2') : null;
+            const infoItems = document.querySelectorAll('.info-item');
+
+            // Set initial states for all elements
+            if (formTitle) {
+                formTitle.style.opacity = '0';
+                formTitle.style.transform = 'translateX(-30px)';
+            }
+
+            formGroups.forEach(group => {
+                group.style.opacity = '0';
+                group.style.transform = 'translateY(20px)';
+            });
+
+            if (submitBtn) {
+                submitBtn.style.opacity = '0';
+                submitBtn.style.transform = 'translateY(20px)';
+            }
+
+            if (infoTitle) {
+                infoTitle.style.opacity = '0';
+                infoTitle.style.transform = 'translateX(30px)';
+            }
+
+            infoItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(30px)';
+            });
+
+            // Single observer for the contact grid - triggers both sections simultaneously
+            const gridObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animate both sections at the same time
+
+                        // Form Title
+                        if (formTitle) {
+                            setTimeout(() => {
+                                formTitle.style.transition = 'all 0.8s ease';
+                                formTitle.style.opacity = '1';
+                                formTitle.style.transform = 'translateX(0)';
+                            }, 200);
+                        }
+
+                        // Info Title (same timing)
+                        if (infoTitle) {
+                            setTimeout(() => {
+                                infoTitle.style.transition = 'all 0.8s ease';
+                                infoTitle.style.opacity = '1';
+                                infoTitle.style.transform = 'translateX(0)';
+                            }, 200);
+                        }
+
+                        // Form Groups (staggered)
+                        formGroups.forEach((group, index) => {
+                            setTimeout(() => {
+                                group.style.transition = 'all 0.6s ease';
+                                group.style.opacity = '1';
+                                group.style.transform = 'translateY(0)';
+                            }, 400 + (index * 100));
+                        });
+
+                        // Info Items (same timing as form groups)
+                        infoItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.style.transition = 'all 0.6s ease';
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateX(0)';
+                            }, 400 + (index * 100));
+                        });
+
+                        // Submit Button
+                        if (submitBtn) {
+                            setTimeout(() => {
+                                submitBtn.style.transition = 'all 0.8s ease';
+                                submitBtn.style.opacity = '1';
+                                submitBtn.style.transform = 'translateY(0)';
+                            }, 400 + (formGroups.length * 100));
+                        }
+
+                        gridObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe the contact grid container
+            if (contactGrid) {
+                gridObserver.observe(contactGrid);
+            }
+
+            // Map Section - Fade Up
+            const mapSection = document.querySelector('.map-section');
+            if (mapSection) {
+                mapSection.style.opacity = '0';
+                mapSection.style.transform = 'translateY(40px)';
+
+                const mapObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            mapSection.style.transition = 'all 0.8s ease';
+                            mapSection.style.opacity = '1';
+                            mapSection.style.transform = 'translateY(0)';
+                            mapObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                mapObserver.observe(mapSection);
+            }
+
+            // Social Section - Fade Up
+            const socialSection = document.querySelector('.social-section');
+            const socialLinks = document.querySelectorAll('.social-links a');
+
+            if (socialSection) {
+                socialSection.style.opacity = '0';
+                socialSection.style.transform = 'translateY(40px)';
+
+                const socialObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            socialSection.style.transition = 'all 0.8s ease';
+                            socialSection.style.opacity = '1';
+                            socialSection.style.transform = 'translateY(0)';
+
+                            // Animate social links
+                            socialLinks.forEach((link, index) => {
+                                link.style.opacity = '0';
+                                link.style.transform = 'scale(0.8)';
+                                setTimeout(() => {
+                                    link.style.transition = 'all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+                                    link.style.opacity = '1';
+                                    link.style.transform = 'scale(1)';
+                                }, 300 + (index * 80));
+                            });
+
+                            socialObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                socialObserver.observe(socialSection);
+            }
+        });
+
+        // ==================== END SCRIPT ====================
+    </script>
+
+</body>
+
+</html>
+
+
+

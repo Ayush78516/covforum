@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>By-Laws - Confederation of Valuers</title>
+    <meta name="description" content="Access the Council of Valuers by-laws and governance framework.">
+    <link rel="canonical" href="https://councilofvaluers.com/bylaws.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="By-Laws - Council of Valuers">
+    <meta property="og:description" content="Access the Council of Valuers by-laws and governance framework.">
+    <meta property="og:url" content="https://councilofvaluers.com/bylaws.html">
+    <meta property="og:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="By-Laws - Council of Valuers">
+    <meta name="twitter:description" content="Access the Council of Valuers by-laws and governance framework.">
+    <meta name="twitter:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://councilofvaluers.com/bylaws.html",
+          "url": "https://councilofvaluers.com/bylaws.html",
+          "name": "By-Laws - Council of Valuers"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem","position": 1,"name": "Home","item": "https://councilofvaluers.com/"},
+            {"@type": "ListItem","position": 2,"name": "By-Laws","item": "https://councilofvaluers.com/bylaws.html"}
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+<%- include("../components/header") %>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+            <h1>By-Laws</h1>
+        
+    </section>
+
+    <section class="pdf-section">
+        <div class="pdf-container">
+            <!-- Custom PDF Controls -->
+            <div class="pdf-controls">
+                <div class="pdf-controls-left">
+                    <button id="prevPage"><i class="fas fa-chevron-left"></i> Previous</button>
+                    <span class="pdf-info">Page <span id="pageNum">1</span> / <span id="pageCount">0</span></span>
+                    <button id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="pdf-controls-center">
+                    <button id="zoomOut"><i class="fas fa-search-minus"></i></button>
+                    <span class="zoom-level"><span id="zoomLevel">100</span>%</span>
+                    <button id="zoomIn"><i class="fas fa-search-plus"></i></button>
+                </div>
+                
+                <div class="pdf-controls-right">
+                    <button id="rotatePage"><i class="fas fa-rotate-right"></i> Rotate</button>
+                    <button id="fullscreen"><i class="fas fa-expand"></i> Fullscreen</button>
+                </div>
+            </div>
+
+            <!-- PDF Canvas -->
+            <div class="pdf-canvas-container" id="canvasContainer">
+                <canvas id="pdfCanvas"></canvas>
+            </div>
+
+            <div class="download-section">
+                <button class="download-btn" id="downloadBtn">
+                    <i class="fas fa-download"></i> Download By-Laws PDF
+                </button>
+            </div>
+        </div>
+    </section>
+
+   <%- include("../components/footer") %>
+
+    <script>
+        // PDF.js worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        let pdfDoc = null;
+        let pageNum = 1;
+        let pageRendering = false;
+        let pageNumPending = null;
+        let scale = 1.5;
+        let rotation = 0;
+        const canvas = document.getElementById('pdfCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Load PDF
+        const url = 'assets/By-Laws COV India Forum (1).pdf';
+
+        pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+            pdfDoc = pdfDoc_;
+            document.getElementById('pageCount').textContent = pdfDoc.numPages;
+            renderPage(pageNum);
+        });
+
+        function renderPage(num) {
+            pageRendering = true;
+            pdfDoc.getPage(num).then(function(page) {
+                const viewport = page.getViewport({ scale: scale, rotation: rotation });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                const renderTask = page.render(renderContext);
+
+                renderTask.promise.then(function() {
+                    pageRendering = false;
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+            });
+
+            document.getElementById('pageNum').textContent = num;
+            updateButtons();
+        }
+
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        function updateButtons() {
+            document.getElementById('prevPage').disabled = (pageNum <= 1);
+            document.getElementById('nextPage').disabled = (pageNum >= pdfDoc.numPages);
+        }
+
+        // Previous page
+        document.getElementById('prevPage').addEventListener('click', function() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
+        });
+
+        // Next page
+        document.getElementById('nextPage').addEventListener('click', function() {
+            if (pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+        });
+
+        // Zoom In
+        document.getElementById('zoomIn').addEventListener('click', function() {
+            scale += 0.25;
+            document.getElementById('zoomLevel').textContent = Math.round(scale * 100);
+            queueRenderPage(pageNum);
+        });
+
+        // Zoom Out
+        document.getElementById('zoomOut').addEventListener('click', function() {
+            if (scale > 0.5) {
+                scale -= 0.25;
+                document.getElementById('zoomLevel').textContent = Math.round(scale * 100);
+                queueRenderPage(pageNum);
+            }
+        });
+
+        // Rotate
+        document.getElementById('rotatePage').addEventListener('click', function() {
+            rotation = (rotation + 90) % 360;
+            queueRenderPage(pageNum);
+        });
+
+        // Fullscreen
+        document.getElementById('fullscreen').addEventListener('click', function() {
+            const container = document.getElementById('canvasContainer');
+            if (container.requestFullscreen) {
+                container.requestFullscreen();
+            } else if (container.webkitRequestFullscreen) {
+                container.webkitRequestFullscreen();
+            } else if (container.msRequestFullscreen) {
+                container.msRequestFullscreen();
+            }
+        });
+
+        // Download
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.href = 'assets/By-Laws COV India Forum (1).pdf';
+            link.download = 'COV-By-Laws.pdf';
+            link.click();
+        });
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        hamburger.addEventListener('click', function () {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = this.classList.contains('active') ? 'hidden' : '';
+        });
+
+        menuOverlay.addEventListener('click', function () {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            this.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 1280 && this.parentElement.classList.contains('nav-item')) {
+                    return;
+                }
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Mobile dropdown toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItem = document.querySelector('.nav-item');
+            if (navItem) {
+                const navItemLink = navItem.querySelector('a');
+                navItemLink.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 1280) {
+                        e.preventDefault();
+                        navItem.classList.toggle('mobile-active');
+                    }
+                });
+            }
+        });
+    </script>
+
+<script src="/js/script.js"></script>
+</body>
+
+</html>
+
+
+

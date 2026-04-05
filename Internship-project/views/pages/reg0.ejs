@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Institution of Valuers</title>
+    <meta name="description" content="Create your Council of Valuers account to begin the registration process.">
+    <link rel="canonical" href="https://councilofvaluers.com/reg0.html">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sign Up - Council of Valuers">
+    <meta property="og:description" content="Create your Council of Valuers account to begin the registration process.">
+    <meta property="og:url" content="https://councilofvaluers.com/reg0.html">
+    <meta property="og:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sign Up - Council of Valuers">
+    <meta name="twitter:description" content="Create your Council of Valuers account to begin the registration process.">
+    <meta name="twitter:image" content="https://councilofvaluers.com/assets/Logo.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://councilofvaluers.com/reg0.html",
+          "url": "https://councilofvaluers.com/reg0.html",
+          "name": "Sign Up - Council of Valuers"
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+</head>
+
+<body class="signup-page">
+    <!-- HEADER -->
+    <%- include("../components/header") %>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="container">
+        <div class="left-section">
+            <div class="image-placeholder">
+                <p>Course Discount Advertisement Image<br>Placeholder</p>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="form-header">
+                <h1>Create Account</h1>
+                <p>Join us today and start your learning journey</p>
+            </div>
+
+            <form id="signupForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password *</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">Sign Up</button>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="social-login">
+                    <button type="button" class="social-btn">Google</button>
+                    <button type="button" class="social-btn">Facebook</button>
+                </div>
+
+                <div class="login-link">
+                    Already have an account? <a href="#">Log In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <%- include("../components/footer") %>
+ 
+    <script src="/js/script.js"></script>
+    <script src="/js/reg.js"></script>
+
+</body>
+
+</html>
+
+
+
