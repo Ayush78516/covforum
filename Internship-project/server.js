@@ -168,7 +168,7 @@ if (!isProd) {
   // Production: Serve static files from front/dist
   const distPath = path.join(__dirname, "../front/dist");
   app.use(express.static(distPath));
-  app.get("*", (req, res, next) => {
+  app.get("*path", (req, res, next) => {
     if (req.path.startsWith("/api") || req.path.startsWith("/ccav")) return next();
     res.sendFile(path.join(distPath, "index.html"));
   });
