@@ -123,12 +123,6 @@ function Registration() {
         return;
       }
 
-      // Save tokens and redirect
-      // localStorage.setItem("token", regData.token);
-      // localStorage.setItem("refreshToken", regData.refreshToken);
-      // setStep(3);
-      // setTimeout(() => navigate("/dashboard"), 2000);
-
       login(regData.token, regData.refreshToken, {
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -152,7 +146,7 @@ function Registration() {
         <div className="left-section">
           <img
             className="image-placeholder"
-            src="/assets/adv.jpeg"
+            src="/assets/soon.jpg"
             alt="COV Advertisement"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />

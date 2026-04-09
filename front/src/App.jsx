@@ -18,6 +18,7 @@ import EducationalDetails from "./pages/reg2";
 import WorkExperience from "./pages/reg3";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import PaymentStatus from "./pages/PaymentStatus";
 
 
 function App(){
@@ -43,6 +44,7 @@ function App(){
       <Route path="/work" element={<WorkExperience/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/dashboard" element={<Dashboard/>} />
+      <Route path="/payment-status" element={<PaymentStatus />} />
     </Routes>
 
     <Footer/>

@@ -299,7 +299,7 @@ function Membership() {
               <button className="popup" onClick={() => setModalType(activeTab)}>
                 Check Eligibility
               </button>
-              <Link to="/registration" className="register-btn1">Register Now</Link>
+              <Link to="/register" className="register-btn1">Register Now</Link>
             </div>
           )}
         </div>

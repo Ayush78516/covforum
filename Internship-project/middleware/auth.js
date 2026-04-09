@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const VerifyToken = (req, res) => {
+const VerifyToken = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
@@ -12,9 +12,9 @@ const VerifyToken = (req, res) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
     next();
-  } catch (err) { 
-    return res.status(500).json({ success: false, message: err.message });
-   }
+  } catch (err) {
+    return res.status(401).json({ success: false, message: "Invalid or expired token." });
+  }
 };
 
 export default VerifyToken;
