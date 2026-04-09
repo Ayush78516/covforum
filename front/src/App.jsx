@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import Membership from "./pages/Membership";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,7 +9,7 @@ import Committee from "./pages/Committee";
 import Bylaws from "./pages/Bylaws";
 import Contact from "./pages/Contact";
 import CovSphere from "./pages/Covsphere";
-import Privacy from "./pages/privacy";
+import Privacy from "./pages/Privacy";
 import Refund from "./pages/Refund";
 import Terms from "./pages/Terms";
 import Registration from "./pages/Registration";

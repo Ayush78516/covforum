@@ -3520,7 +3520,7 @@ input[type=file] {
 }
 
 /* ===== BEGIN style1.css (about) ===== */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap");
+
 
 :root {
   --primary: #002b5b;
@@ -5623,7 +5623,7 @@ body::-webkit-scrollbar {
 /* ===== END style1.css ===== */
 
 /* ===== BEGIN style2.css (contact) ===== */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap");
+
 
 :root {
   --primary: #002b5b;
