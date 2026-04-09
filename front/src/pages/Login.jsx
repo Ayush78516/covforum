@@ -39,6 +39,7 @@ function Login() {
         firstName: data.firstName,
         lastName: data.lastName,
         email: formData.email,
+        tempMembershipId: data.tempMembershipId
       });
 navigate("/dashboard");
     } catch (err) {

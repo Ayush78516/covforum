@@ -106,7 +106,10 @@ export const register = async (req, res) => {
       success: true,
       message: "Registered successfully",
       token,
-      refreshToken
+      refreshToken,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      tempMembershipId: user.tempMembershipId
     });
 
   } catch (err) {
@@ -151,7 +154,10 @@ export const login = async (req, res) => {
         success: true, 
         message: "Login successful", 
         token, 
-        refreshToken 
+        refreshToken,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        tempMembershipId: user.tempMembershipId
     });
   } catch (err) { 
     return res.status(500).json({ success: false, message: err.message });

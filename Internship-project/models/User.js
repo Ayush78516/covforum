@@ -53,6 +53,32 @@ const UserSchema = new mongoose.Schema({
     memberType:   { type: String, default: "" }, validTill:  { type: String, default: "" },
     membershipNo: { type: String, default: "" }, status:     { type: String, default: "Pending" },
   },
+  education: [{
+    qualification: { type: String, default: "" },
+    year: { type: String, default: "" },
+    marks: { type: String, default: "" },
+    board: { type: String, default: "" },
+    college: { type: String, default: "" },
+    fileName: { type: String, default: "" },
+  }],
+  professionalQualification: [{
+    qualification: { type: String, default: "" },
+    institute: { type: String, default: "" },
+    membershipNo: { type: String, default: "" },
+    year: { type: String, default: "" },
+    validity: { type: String, default: "" },
+    fileName: { type: String, default: "" },
+  }],
+  experience: [{
+    status: { type: String, default: "" },
+    years: { type: String, default: "" },
+    from: { type: String, default: "" },
+    to: { type: String, default: "" },
+    employer: { type: String, default: "" },
+    designation: { type: String, default: "" },
+    area: { type: String, default: "" },
+    fileName: { type: String, default: "" },
+  }],
   payments: [PaymentSchema],
 });
 

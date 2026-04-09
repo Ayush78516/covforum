@@ -87,7 +87,7 @@ function Dashboard() {
   const [saveMsg, setSaveMsg] = useState("");
 
   const [topInfo, setTopInfo] = useState({
-    memberClass: "", assetClass: "", membershipNo: "", status: "Pending",
+    memberClass: "", assetClass: "", membershipNo: user?.tempMembershipId || "", status: "Pending",
   });
 
   const [personal, setPersonal] = useState({
@@ -144,7 +144,7 @@ function Dashboard() {
 
   const [memberDetails, setMemberDetails] = useState({
     memberClass:"", assetClass:"", memberType:"", validTill:"",
-    membershipNo:"", status:"Pending",
+    membershipNo: user?.tempMembershipId || "", status:"Pending",
   });
 
   const [passwords, setPasswords] = useState({ current:"",newPass:"",confirm:"" });
@@ -199,6 +199,9 @@ function Dashboard() {
         }
         if (u.permAddress) setPermAddress(u.permAddress);
         if (u.corrAddress) setCorrAddress(u.corrAddress);
+        if (u.education && u.education.length > 0) setEduRows(u.education);
+        if (u.professionalQualification && u.professionalQualification.length > 0) setProRows(u.professionalQualification);
+        if (u.experience && u.experience.length > 0) setExpRows(u.experience);
         if (u.memberDetails) {
           setMemberDetails(prev => ({ ...prev, ...u.memberDetails, membershipNo: u.tempMembershipId || prev.membershipNo }));
           setTopInfo({ memberClass: u.memberDetails.memberClass || "", assetClass: u.memberDetails.assetClass || "", membershipNo: u.tempMembershipId || "", status: u.memberDetails.status || "Pending" });
@@ -254,6 +257,34 @@ function Dashboard() {
       if (!res.ok) throw new Error(data.message);
       setTopInfo({ memberClass: memberDetails.memberClass, assetClass: memberDetails.assetClass, membershipNo: memberDetails.membershipNo, status: memberDetails.status });
       showSaveMsg("✅ Member details saved!");
+    } catch (err) { showSaveMsg("❌ " + err.message); } finally { setSaving(false); }
+  };
+
+  const saveEducation = async () => {
+    setSaving(true);
+    try {
+      const res = await fetch("/api/user/education", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ education: eduRows, professionalQualification: proRows }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message);
+      showSaveMsg("✅ Educational & Professional qualifications saved!");
+    } catch (err) { showSaveMsg("❌ " + err.message); } finally { setSaving(false); }
+  };
+
+  const saveExperience = async () => {
+    setSaving(true);
+    try {
+      const res = await fetch("/api/user/experience", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ experience: expRows }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message);
+      showSaveMsg("✅ Experience details saved!");
     } catch (err) { showSaveMsg("❌ " + err.message); } finally { setSaving(false); }
   };
 
@@ -590,7 +621,7 @@ function Dashboard() {
                 </div>
                 <button style={styles.addRowBtn} onClick={()=>setProRows([...proRows,{qualification:"",institute:"",membershipNo:"",year:"",validity:"",fileName:""}])}>+ Add Row</button>
               </SectionCard>
-              <NavButtons onSave={()=>showSaveMsg("✅ Saved!")} saving={saving} onNext={goNext} />
+              <NavButtons onSave={saveEducation} saving={saving} onNext={goNext} />
             </>
           )}
 
@@ -649,7 +680,7 @@ function Dashboard() {
                   ))}
                 </ul>
               </SectionCard>
-              <NavButtons onSave={()=>showSaveMsg("✅ Saved!")} saving={saving} onNext={goNext} />
+              <NavButtons onSave={saveExperience} saving={saving} onNext={goNext} />
             </>
           )}
 
@@ -660,7 +691,7 @@ function Dashboard() {
 
                 {/* Temp Membership ID — read only */}
                 <FormGroup label="Membership Number (Auto-generated)">
-                  <input style={{ ...styles.input, ...styles.inputReadonly, fontWeight:600, color:"#002b5b" }}
+                  <input style={{ ...styles.input, ...styles.inputReadonly, fontWeight:600, color:"#002b5b", cursor: "not-allowed" }}
                     value={memberDetails.membershipNo || "Generating..."} readOnly />
                 </FormGroup>
 
